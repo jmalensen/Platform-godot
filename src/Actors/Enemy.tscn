@@ -17,5 +17,10 @@ position = Vector2(0, -48)
 texture = ExtResource("2_hpkwk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -37)
 shape = SubResource("RectangleShape2D_734qr")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(0, -11)
+rect = Rect2(-50, -50, 100, 60)
