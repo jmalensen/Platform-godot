@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://csmjitrkh1add"]
+
+[ext_resource type="TileSet" uid="uid://bffrphn81vqep" path="res://assets/tileset.tres" id="1_hnnkh"]
+[ext_resource type="PackedScene" uid="uid://7c0owc8fgur2" path="res://src/Actors/Player.tscn" id="2_qdcqa"]
+[ext_resource type="PackedScene" uid="uid://oxqfpaxnpyyg" path="res://src/Actors/Enemy.tscn" id="3_2xv01"]
+
+[node name="LevelTemplate" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_hnnkh")
+format = 2
+layer_0/tile_data = PackedInt32Array(458748, 0, 0, 393212, 0, 0, 327676, 0, 0, 131068, 0, 0, 196604, 0, 0, 262140, 0, 0, 65532, 0, 0, 524284, 0, 0, 589820, 0, 0, 655356, 0, 0, 720892, 0, 0, 786428, 0, 0, 851964, 0, 0, 917500, 0, 0, 917501, 0, 0, 917502, 0, 0, 917503, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851979, 0, 0, 851980, 0, 0, 851981, 0, 0, 851982, 0, 0, 851983, 0, 0, 851984, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 0, 0, 851991, 0, 0, 851992, 0, 0, 851993, 0, 0, 851994, 0, 0, 851995, 0, 0, 786459, 0, 0, 720923, 0, 0, 655387, 0, 0, 589851, 0, 0, 524315, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 655370, 0, 0, 655371, 0, 0, 589835, 0, 0, 589836, 0, 0, 655372, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_qdcqa")]
+position = Vector2(95, 727)
+
+[node name="Enemy" parent="." instance=ExtResource("3_2xv01")]
+position = Vector2(1977, 673)
