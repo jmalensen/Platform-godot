@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://7c0owc8fgur2"]
+[gd_scene load_steps=5 format=3 uid="uid://7c0owc8fgur2"]
 
 [ext_resource type="Texture2D" uid="uid://dn6rbfgkj6nst" path="res://assets/player.png" id="1_ibm5v"]
 [ext_resource type="Script" path="res://src/Actors/Player.gd" id="1_vvhqp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_734qr"]
 size = Vector2(92, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28r1p"]
+size = Vector2(96, 91)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 8
@@ -20,3 +23,16 @@ position = Vector2(0, -45)
 shape = SubResource("RectangleShape2D_734qr")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+
+[node name="EnemyDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
+modulate = Color(0.619608, 0.00392157, 0.941176, 1)
+position = Vector2(0, -44.5)
+shape = SubResource("RectangleShape2D_28r1p")
+
+[connection signal="area_entered" from="EnemyDetector" to="." method="_on_enemy_detector_area_entered"]
+[connection signal="body_entered" from="EnemyDetector" to="." method="_on_enemy_detector_body_entered"]
